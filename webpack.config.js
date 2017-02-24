@@ -1,5 +1,5 @@
 /* flow */
-const AsyncAwaitPlugin = require('webpack-async-await') ;
+const AsyncAwaitPlugin = require('webpack-async-await')
 
 module.exports = {
   entry: './src/main.js',
@@ -19,4 +19,4 @@ module.exports = {
       }
     ]
   }
-};
+}

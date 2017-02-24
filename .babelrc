@@ -1,16 +1,37 @@
 {
-  "sourceMaps": "inline",
+  "presets": [
+    "react",
+    ["env", { "targets": {
+      "Chrome": 56
+    }}]
+  ],
   "plugins": [
-    "syntax-async-functions",
+    "flow-runtime",
     "transform-decorators-legacy",
-    "transform-class-properties",
-    "transform-object-rest-spread",
-    "transform-react-jsx",
-    "transform-flow-strip-types"
+    "transform-runtime",
+    "transform-object-rest-spread"
   ],
   "env": {
     "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
+      "presets": [
+        "react",
+        ["env", { "targets": {
+          "node": 6
+        }}]
+      ],
+      "plugins": [
+        ["flow-runtime", {"assert": true}],
+        "transform-async-to-generator"
+      ],
+    },
+    "production": {
+      "presets": [
+        "react",
+        "flow",
+        ["env", { "targets": {
+          "browsers": ["last 2 versions", "IE 11"]
+        }}]
+      ]
     }
   }
 }

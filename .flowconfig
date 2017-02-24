@@ -1,8 +1,11 @@
 [ignore]
+.*/node_modules/ava/.*.flow
 
 [include]
 
 [libs]
 
 [options]
+munge_underscores=true
 module.ignore_non_literal_requires=true
+esproposal.decorators=ignore
